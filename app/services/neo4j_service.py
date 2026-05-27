@@ -14,7 +14,10 @@ def utc_now_iso() -> str:
 
 class Neo4jService:
     def __init__(self, uri: str, username: str, password: str):
-        self.driver = GraphDatabase.driver(uri, auth=(username, password))
+        self.driver = GraphDatabase.driver(
+            uri,
+            auth=(username, password)
+)
 
     def close(self):
         self.driver.close()
