@@ -4,6 +4,16 @@ Adds Evidence Library and Interview Prep Engine.
 """
 
 import os
+import hashlib
+from app.services.config_service import get_neo4j_uri, get_neo4j_username, get_neo4j_password
+
+pwd = get_neo4j_password() or ""
+
+st.sidebar.write("URI:", get_neo4j_uri())
+st.sidebar.write("User:", get_neo4j_username())
+st.sidebar.write("Password length:", len(pwd))
+st.sidebar.write("Password hash:", hashlib.sha256(pwd.encode()).hexdigest()[:12])
+
 from dataclasses import dataclass
 import streamlit as st
 from dotenv import load_dotenv
