@@ -5,7 +5,7 @@ Adds Evidence Library and Interview Prep Engine.
 
 import os
 import hashlib
-from app.services.config_service import get_neo4j_uri, get_neo4j_username, get_neo4j_password
+from services.config_service import get_neo4j_uri, get_neo4j_username, get_neo4j_password
 
 pwd = get_neo4j_password() or ""
 
